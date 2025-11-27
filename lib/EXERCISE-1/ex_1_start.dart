@@ -13,10 +13,24 @@ void main() {
             children: [
               Label("Method 1: Loop in Array", bold: true),
               // TODO
+              Column(
+                children: [
+                  for (var color in colors )
+                  
+                  Text(color)  
+                ],
+              ),
               Label("Method 2: Map", bold: true),
               // TODO
+              Column(
+                 children: [
+                  ...colors.map((c)=> Text(c)).toList(),
+                 ],
+              ),
               Label("Method 23: Dedicated Function", bold: true),
               // TODO
+              ...ronanthebest(),
+
             ],
           ),
         ),
@@ -40,4 +54,8 @@ class Label extends StatelessWidget {
       ),
     );
   }
+}
+
+List<Widget> ronanthebest (){
+  return colors.map((c) => Text(c)). toList();
 }
